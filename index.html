@@ -1,0 +1,122 @@
+<body>
+
+	<header>
+  Autor: Ángel Martín Garrido
+  <br>
+  Url Stackblitz: <a href= "https://js-seminario1.stackblitz.io"> https://js-seminario1.stackblitz.io</a>
+  <br>
+  Fuente: <a href="https://es.investing.com/commodities/brent-oil"> https://es.investing.com/commodities/brent-oil
+  </a> 
+  <br>
+  <a
+  href="https://www.dieselogasolina.com/"> https://www.dieselogasolina.com/  </a> 
+  <br>
+  <a
+  href="https://datos.gob.es/es/catalogo/e04990201-precio-de-carburantes-en-las-gasolineras-espanolas"> https://datos.gob.es/es/catalogo/e04990201-precio-de-carburantes-en-las-gasolineras-espanolas  </a> 
+  <br>
+  Fecha: 10/04/2020
+</header>
+
+  <DIV>
+  <h1>OBJETIVO</h1>
+  <p>El objetivo de la presente práctica va a ser tratar de dar respuestas a preguntas relacionadas con algo que nos afecta diariamente a la mayoría de la población, el combustible. De este modo, creo que la audiencia a la que le puede interesar este mensaje será de lo más amplia y tal vez incluso les sirva este documento para ahorrar un dinero extra cada semana. Las preguntas que se me han ocurrido con el fin de poner en práctica lo aprendido son las siguientes:  </p>
+
+<ol><li> ¿Hay algún día mejor que otro para echar gasolina a lo largo de la semana?</li>
+<li>¿Cómo afecta el precio del petróleo al precio del combustible? </li>
+<li>¿Cuál es la distribución de estaciones de servicio en España?</li>
+</ol>
+</DIV>
+
+<DIV>
+<h2>DATASETS</h2>
+
+  <p>Dado que no he sido capaz de encontrar un dataset en el que pudiera encontrar respuestas directas a estas preguntas, he decidido crear los datasets necesarios para tratar de responder a las preguntas anteriormente formuladas.  </p>
+
+<P>  Dado que no he sido capaz de encontrar un dataset en el que pudiera encontrar respuestas directas a estas preguntas, he decidido crear los datasets necesarios para tratar de responder a las preguntas anteriormente formuladas. De este modo, esta parte del dataset está formada por los siguientes campos:  </P>
+
+</DIV>
+ 
+ <Ul><li>Precio Gasolina 98 (€/l) </li>
+<li>Precio Gasolina 95 (€/l) </li>
+<li>Precio Gasóleo (€/l)</li>
+<li> Fecha (días desde el 1 de enero de 2020 hasta el 31 de marzo de 2020, excluyendo fines de semana).</li>
+</Ul>
+
+  <p>Por su parte, para responder a la pregunta 2, he recurrido al dataset ofrecido por investing para el precio del barril de petróleo Brent (INVESTING, 2020). Este dataset consta de los siguientes campos:  </p>
+
+ <Ul><li>Fecha.</li>
+<li>Precio de apertura. </li>
+<li>Precio de cierre.</li>
+<li>Precio máximo. </li>
+<li>Precio mínimo. </li>
+<li>Volumen negociado. </li>
+</Ul>
+
+  <p>A continuación, lo he combinado con el primer dataset que había creado a mano con los precios del combustible con el fin de analizar las variaciones del precio del petróleo con las variaciones del precio del combustible en las gasolineras. Además el poseer el precio del barril, lo he utilizado para crear nuevos campos:  </p>
+
+
+   <Ul><li>Precio litro del petróleo: precio del barril dividido por su capacidad de 159 l.</li>
+<li>Margen de beneficio Gasolina 98: diferencia del precio del litro de gasolina 98 y el precio del litro de petróleo. </li>
+<li>Margen de beneficio Gasolina 95: diferencia del precio del litro de gasolina 95 y el precio del litro de petróleo.</li>
+<li>Margen de beneficio Gasóleo: diferencia del precio del litro de gasóleo y el precio del litro de petróleo. </li>
+<li>Rentabilidad Gasolina 98: ratio que se obtiene de dividir el margen de beneficio de la gasolina 98 entre el precio del litro de petróleo. </li>
+<li> Rentabilidad Gasolina 95: ratio que se obtiene de dividir el margen de beneficio de la gasolina 95 entre el precio del litro de petróleo.</li>
+<li>Rentabilidad Gasóleo: ratio que se obtiene de dividir el margen de beneficio de la gasóleo entre el precio del litro de petróleo. </li>
+</Ul>
+
+  <p>Finalmente, para responder a la pregunta 3 encontré un dataset en la página del Ministerio de Industria (Industria, 2020). Este dataset contenía los siguientes campos:  </p>
+
+   <Ul><li>Provincia.</li>
+<li>Latitud y Longitud. </li>
+<li>Dirección.</li>
+<li>Precio de los distintos combustibles que ofertaban. </li>
+</Ul>
+
+  <p>A estos campos, añadí manualmente la comunidad autónoma a la que pertenecía cada estación de servicio con el fin de poder responder a la pregunta planteada.  </p>
+<h2>HERRAMIENTAS</h2>
+  <p>Las herramientas empleadas han sido las siguientes:  </p>
+     <Ul><li>GoogleSheets: se empleó principalmente para utilizarlo de cara a practicar para el examen, además de su dinamismo debido a su utilidad online.</li>
+<li>Tableau: se empleó debudo a su gran cotización en el mercado laboral. </li>
+<li>Datawrapper: se empleó con el fin de cumplir con el criterio de emplear más de dos herramientas.</li>
+</Ul>
+<h2>PREGUNTA 1: MEJOR DÍA DE LA SEMANA PARA REPOSTAR</h2>
+<p>La herramienta empleada para este apartado será Tableau, dada la gran cotización que existe en el mercado laboral actual de profesionales que sepan manejar esta herramienta. El gráfico elegido para desarrollar la comparación será el de columnas, ya que tenemos tan solo tres tipos de combustible y 5 días de la semana. Cabe señalar, que solamente se ha analizado el precio para los días laborables, porque en el dataset creado también estaban las cotizaciones de los barriles de petróleo y dado que los fines de semana los mercados están cerrados, se hubiesen descuadrado los resultados del precio de combustible en los fines de semana. En cualquier caso, este fenómeno no desvirtúa el resultado final ya que se pudo observar que el precio los fines de semana nunca eran los mínimos semanales. </p>
+
+<p>Para determinar el mejor día para repostar, se decidió emplear el valor promedio del precio del litro de los distintos combustibles durante el periodo de análisis (1 de enero de 2020 a 31 de marzo de 2020). </p>
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/pLVHr0x/Whats-App-Image-2020-04-19-at-20-20-54.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-54" border="0"></a>
+
+<p>Como se puede apreciar, de acuerdo con el gráfico anterior el mejor día para repostar sería el martes independientemente del tipo de combustible que empleemos como usuarios. Por tanto, si nos queremos ahorrar unos euros, a partir de ahora ya sabemos lo que hay que hacer. </p>
+<p>Se podría haber empleado una visualización que agrupase cada tipo de combustible para cada día de la semana, pero las etiquetas se solapaban y se consideró finalmente que era mejor esta opción debido al rango tan estrecho en el que se movían los valores. </p>
+
+<h2>PREGUNTA 2: RELACIÓN ENTRE EL PRECIO DE COMBUSTIBLE Y EL PRECIO DEL PETRÓLEO</h2>
+<p> Dada la situación actual con el COVID 19, la demanda de petróleo ha caído bruscamente lo cual está teniendo un gran impacto en el precio del barril de petróleo. A esto hay que sumar, la falta de acuerdo entre la OPEP, Rusia y EEUU a la hora de reducir la producción con el fin de aumentar el precio del barril debido a diferentes intereses geopolíticos.</p>
+<p>Se muestra a continuación, el gráfico de velas desarrollado mediante Google Sheets con el fin de ilustrar la evolución en Bolsa del precio del petróleo Brent. El motivo por el que se ha elegido Google Sheets es porque he querido practicar su uso una vez que se confirmó que la actividad del examen se desarrollaría mediante esta herramienta. </p>
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/0GSCKFT/Whats-App-Image-2020-04-19-at-20-20-54-1.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-54-1" border="0"></a>
+<p> Con el fin de tener un mejor entendimiento, se ha procedido a desarrollar un gráfico de líneas que muestre la evolución del precio del litro de petróleo, ya que cuando vamos a una gasolinera estamos más acostumbrados a hablar de €/litro. Para ello, simplemente se ha dividido los precios mostrados para el barril de petróleo por su capacidad (159 litros). La herramienta empleada ha sido nuevamente Google Sheets y el tipo de gráfico escogido ha sido el de líneas, ya que el periodo para analizar la evolución de los precios es lo suficientemente largo.</p>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/M2QLT07/Whats-App-Image-2020-04-19-at-20-20-54-2.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-54-2" border="0"></a>
+<p> Como se puede apreciar el precio del petróleo ha caído en torno a un 67.5%, ¿habrá hecho lo propio el precio de los combustibles? Se representa a continuación la evolución de los precios de los diferentes combustibles mediante la herramienta DataWrapper, con el fin de emplear una herramienta más de las aprendidas durante el transcurso de esta asignatura y sacar ventaja de sus utilidades de interactividad, con el fin de hacer más agradable la experiencia de navegación a los usuarios.</p>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/RYqHFVZ/Whats-App-Image-2020-04-19-at-20-20-54-3.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-54-3" border="0"></a>
+<p>De acuerdo con la ilustración anterior, el precio del combustible apenas se ha visto reducido en un 15% en este mismo periodo. Vamos a representar a continuación mediante DataWrapper un grafico que analice el ratio entre la diferencia del precio del litro de combustible con la del litro de petróleo dividido por éste. De este modo, seremos capaces de analizar la rentabilidad que estarían sacando las gasolineras en la actualidad con el petróleo que se está extrayendo actualmente. Cabe señalar, que no sabemos los costes de transformación asociados a cada combustible, por lo que no estaremos viendo el margen de beneficio real que obtienen las gasolineras como tal, pero considero que es interesante el análisis de este ratio con el fin de hacernos una idea de cómo han variado las rentabilidades por litro vendido durante este periodo. </p>
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/3fYKtDx/Whats-App-Image-2020-04-19-at-20-20-38.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-38" border="0"></a>
+
+<p> Como se puede observar en el gráfico superior, en enero y febrero la rentabilidad estaba acotada entre 2 y 4, pero cuando se imposibilitó el acuerdo de la OPEP con Rusia a principios de marzo, las rentabilidades se dispararon al entorno de 7. Esto lo que quiere decir es que si las peores estimaciones auguraban que la caída de la demanda sería de un 30%, las rentabilidades deberían haber aumentado hasta el entorno de 5 aproximadamente (repito, a falta de conocer los costes de producción de cada combustible) para mantener constante los beneficios, pero la realidad es que se ha disparado mucho más. De este modo, aunque los usuarios nos ahorramos unos euros actualmente cuando repostamos, no lo hacemos en la misma medida en que ha caído el petróleo.</p>
+
+<h2>PREGUNTA 3: DISTRIBUCIÓN DE ESTACIONES DE SERVICIO EN ESPAÑA</h2>
+<p> El objetivo de esta pregunta es poder poner en práctica los gráficos de mapas ofrecidos por Tableau. Nuevamente, el motivo por el cual he decidido emplear Tableau para este apartado es su gran aceptación dentro del mercado laboral.</p>
+
+
+<p> En primer lugar se va a mostrar en orden decreciente las comunidades autónomas según el número de gasolineras que poseen mediante un gráfico de columnas, tal y como hicimos en la AG2 con el fin de ver de un modo más claro los resultados finales, aprovechando las propiedades de longitud y ordenación.</p>
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/7y3xBBD/Whats-App-Image-2020-04-19-at-20-20-38-2.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-38-2" border="0"></a>
+
+<p> El gráfico anterior muestra que Andalucía y Cataluña, son las CCAA con mayor cantidad de estaciones de servicio. Además este gráfico es interactivo ya que el usuario puede seleccionar las CCAA que le interesen por medio de filtros. </p>
+
+<p> Una vez identificado el número de gasolineras por CCAA, se muestra a continuación un mapa de dispersión, desarrollado mediante Tableau, que permite identificar la distribución de dichas estaciones de servicio. En él, el usuario puede seleccionar en qué comunidad desea ver la distribución de estaciones de servicio.</p>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/njpBzsq/Whats-App-Image-2020-04-19-at-20-20-38-1.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-38-1" border="0"></a>
+<p> En este caso, se han filtrado únicamente las gasolineras existentes en Andalucía.</p>
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/JQt9RTj/Whats-App-Image-2020-04-19-at-20-20-38-3.jpg" alt="Whats-App-Image-2020-04-19-at-20-20-38-3" border="0"></a>
+
